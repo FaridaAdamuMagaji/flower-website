@@ -7,15 +7,15 @@ const flowerRoutes = require('./routes/flowerRoutes');
         
 const app = express();
 const PORT = process.env.PORT || 5000;
-        
+
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use("/assets", express.static(path.join(__dirname, "assets"))); // Serve uploaded images
-        
+
 // Routes
 app.use("/api", flowerRoutes);
-        
+
 
 const mongo= 'mongodb+srv://faridaadamumagaji:ORVooYt83cHv1DF4@flower.vuwuq.mongodb.net/?retryWrites=true&w=majority&appName=flower';
 mongoose.connect(mongo)
@@ -24,11 +24,11 @@ mongoose.connect(mongo)
 
 module.exports = mongoose;
 
-        
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
-        
-        
+
+
 
